@@ -16,4 +16,10 @@ jobs:
                 dotnet-version: 7.0.x
 
             - name: Build App
-              run: dotnet build
+              run: dotnet build -c Release -o /bin
+
+            - name: Upload artifacts
+              uses: actions/upload-artifact@v3
+              with:
+                  name: bin
+                  path: /bin 
