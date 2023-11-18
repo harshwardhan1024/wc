@@ -4,26 +4,23 @@
 
 A clone of Linux's wc utility for word processing. It calculates a file's word, line, character or byte count.
 
-# How to use
+## Usage
 
-- Download the binary.
-- Add its path in Environment Variables.
-- Then you can execute the following commands.
-
-Count number of **lines** in a file.
+1. Download the binary.
+2. Add its path in Environment Variables.
+3. Then you can execute the following command.
 
 `wc <file-path> -l`
 
-Count number of **words** in a file.
+This will output the number of lines in the specified file.
 
-`wc <file-path> -w`
+### Flags
+| Flag | Description |
+|------|-------------|
+| l | Count lines |
+| w | Count words |
+| m | Count characters |
+| c | Count bytes |
 
-Count number of **characters** in a file.
-
-`wc <file-path> -m`
-
-Count number of **bytes** in a file.
-
-`wc <file-path> -c`
 
 You can also pass multiple flags. If no flag is passed then output is similar to `wc <file-path> -l -w -m`.
