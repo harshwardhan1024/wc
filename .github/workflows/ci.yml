@@ -21,5 +21,24 @@ jobs:
             - name: Upload artifacts
               uses: actions/upload-artifact@v3
               with:
-                  name: bin
-                  path: /bin 
+                name: bin
+                path: /bin
+
+    test:
+        runs-on: windows-latest
+        steps:
+            - name: Download binary
+              uses: actions/download-artifact@v3
+              with:
+                name: bin
+
+            - name: Setup .NET
+              uses: actions/setup-dotnet@v1
+              with:
+                dotnet-version: 7.0.x
+
+            - name: Execute Tests
+              run: dotnet test bin/*.UnitTests.dll
+
+
+
