@@ -25,12 +25,12 @@ jobs:
               run: dotnet publish src/wc.Console/wc.Console.csproj -c Release -r win-x64 -p:PublishSingleFile=true -p:DebugType=embedded --self-contained true -o /publish
 
             - name: Rename Binary
-              run: mv publish/wc.Console.exe publish/wordcount.exe
+              run: mv /publish/wc.Console.exe /publish/wc.exe
 
             - name: Upload artifacts
               uses: actions/upload-artifact@v3
               with:
-                name: wordcount-win-x64
+                name: wc-win-x64
                 path: /publish
 
 
