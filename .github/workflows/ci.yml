@@ -27,11 +27,11 @@ jobs:
             - name: Rename Binary
               run: mv /publish/wc.Console.exe /publish/wc.exe
 
-            - name: Create Release
-              uses: ncipollo/release-action@v1
+            - name: Upload artifacts
+              uses: actions/upload-artifact@v3
               with:
-                artifacts: /publish/wc.exe
-                tag: "v0.0.1"
+                name: wc-win-x64
+                path: /publish
 
 
 

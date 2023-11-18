@@ -6,7 +6,7 @@ A clone of Linux's wc utility for word processing. It calculates a file's word, 
 
 ## Usage
 
-1. Download the binary.
+1. Download the binary from CI artifacts.
 2. Add its path in Environment Variables.
 3. Then you can execute the following command.
 
