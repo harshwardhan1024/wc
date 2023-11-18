@@ -16,13 +16,13 @@ jobs:
                 dotnet-version: 7.0.x
 
             - name: Build App
-              run: dotnet build -c Release -o /bin
+              run: dotnet build -c Release -o /out
 
             - name: Upload artifacts
               uses: actions/upload-artifact@v3
               with:
                 name: bin
-                path: /bin
+                path: /out
 
     test:
         needs: build
@@ -32,6 +32,7 @@ jobs:
               uses: actions/download-artifact@v3
               with:
                 name: bin
+                path: wc/bin
 
             - name: Setup .NET
               uses: actions/setup-dotnet@v1
@@ -39,7 +40,7 @@ jobs:
                 dotnet-version: 7.0.x
 
             - name: Execute Tests
-              run: dotnet test bin/*.UnitTests.dll
+              run: dotnet test wc/bin/*.UnitTests.dll
 
 
 
