@@ -15,8 +15,6 @@ jobs:
               with:
                 dotnet-version: 7.0.x
 
-            - run: ls
-
             - name: Build App
               run: dotnet build -c Release -o build
 
@@ -26,10 +24,13 @@ jobs:
             - name: Publish App
               run: dotnet publish src/wc.Console/wc.Console.csproj -c Release -r win-x64 -p:PublishSingleFile=true -p:DebugType=embedded --self-contained true -o /publish
 
+            - name: Rename Binary
+              run: mv publish/wc.Console.exe publish/wordcount.exe
+
             - name: Upload artifacts
               uses: actions/upload-artifact@v3
               with:
-                name: bin
+                name: wordcount-win-x64
                 path: /publish
 
 
