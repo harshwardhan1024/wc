@@ -1,5 +1,7 @@
 # Word Counter
 
+[![CI](https://github.com/harshwardhan1024/wc/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/harshwardhan1024/wc/actions/workflows/ci.yml)
+
 A clone of Linux's wc utility for word processing. It calculates a file's word, line, character or byte count.
 
 # How to use
