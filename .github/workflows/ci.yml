@@ -25,6 +25,7 @@ jobs:
                 path: /bin
 
     test:
+        needs: build
         runs-on: windows-latest
         steps:
             - name: Download binary
